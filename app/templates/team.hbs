@@ -1,10 +1,10 @@
-{{page-title (concat "Team " @model.name)}}
-{{!-- {{log @model}} --}}
-{{#if @model}}
-  <h3>Team {{@model.name}}</h3>
+{{page-title (concat "Team " this.model.name)}}
+{{!-- {{log this.model}} --}}
+{{#if this.model}}
+  <h3>Team {{this.model.name}}</h3>
   <div class="players-list">
     <p><b>Players</b></p>
-    {{#each @model.players as |player|}}
+    {{#each this.model.players as |player|}}
     <LinkTo @route="player" @model={{player.id}} class="player-link">{{player.name}}</LinkTo>
     {{/each}}
   </div>

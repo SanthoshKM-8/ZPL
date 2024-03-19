@@ -12,7 +12,7 @@ export default class MatchesRoute extends Route {
   };
 
   model(params) {
-    console.log(params);
+    // console.log(params);
     const teamFilter = params.teamFilter;
     const matches = [
       {

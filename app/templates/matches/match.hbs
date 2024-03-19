@@ -1,11 +1,11 @@
-{{page-title (concat "Match " @model.no)}}
+{{page-title (concat "Match " this.model.no)}}
 <div class="match">
-  <h3>Match {{@model.no}}</h3>
-  <LinkTo @route="team" @model={{@model.team1_id}} class="team-name-link"><span>{{@model.team1_name}}</span></LinkTo>
+  <h3>Match {{this.model.no}}</h3>
+  <LinkTo @route="team" @model={{this.model.team1_id}} class="team-name-link"><span>{{this.model.team1_name}}</span></LinkTo>
   <p>VS</p>
-  <LinkTo @route="team" @model={{@model.team2_id}} class="team-name-link"><span>{{@model.team2_name}}</span></LinkTo>
-  <p>Venue: <b>{{@model.venue}}</b></p>
-  <p>Date: <b>{{@model.date}}</b></p>
-  <p>Time: <b>{{@model.time}}</b></p>
+  <LinkTo @route="team" @model={{this.model.team2_id}} class="team-name-link"><span>{{this.model.team2_name}}</span></LinkTo>
+  <p>Venue: <b>{{this.model.venue}}</b></p>
+  <p>Date: <b>{{this.model.date}}</b></p>
+  <p>Time: <b>{{this.model.time}}</b></p>
 </div>
 {{outlet}}

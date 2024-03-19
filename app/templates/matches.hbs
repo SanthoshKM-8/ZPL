@@ -1,0 +1,14 @@
+{{page-title "Matches"}}
+<h2>Matches</h2>
+{{!-- {{log @model}} --}}
+<div class="filter">
+  <p>Filter by Team</p>
+  <LinkTo @route='matches' @query={{hash teamFilter="Platform"}}>Platform</LinkTo>
+  <LinkTo @route='matches' @query={{hash teamFilter="Billing"}}>Billing</LinkTo>
+  <LinkTo @route='matches' @query={{hash teamFilter="Invoice"}}>Invoice</LinkTo>
+  <LinkTo @route='matches' @query={{hash teamFilter=null}}>Clear Filter</LinkTo>
+</div>
+{{#each this.filteredMatches as |match|}}
+  <MatchCard @match={{match}} class="match-card"/>
+{{/each}}
+{{outlet}}

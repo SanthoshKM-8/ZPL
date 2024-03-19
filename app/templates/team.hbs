@@ -1,0 +1,9 @@
+{{page-title (concat "Team " @model.name)}}
+{{!-- {{log @model}} --}}
+{{#if @model}}
+  <h3>Team {{@model.name}}</h3>
+{{else}}
+  <p>No Team Found</p>
+  <LinkTo @route='matches'>Back To Matches</LinkTo>
+{{/if}}
+{{outlet}}

@@ -1,0 +1,6 @@
+<div ...attributes>
+  <p>Match {{@match.no}}</p>
+  <p>{{@match.team1_name}} vs {{@match.team2_name}}</p>
+  <LinkTo @route="matches.match" @model={{@match.id}}>More Details</LinkTo>
+</div>
+{{yield}}

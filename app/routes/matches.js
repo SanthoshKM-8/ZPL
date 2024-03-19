@@ -7,10 +7,13 @@ export default class MatchesRoute extends Route {
   queryParams = {
     teamFilter: {
       replace: true,
+      refreshModel: true,
     },
   };
 
-  model() {
+  model(params) {
+    console.log(params);
+    const teamFilter = params.teamFilter;
     const matches = [
       {
         id: 101,
@@ -46,6 +49,32 @@ export default class MatchesRoute extends Route {
         time: '05:00 PM',
       },
     ];
-    return matches;
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(matches);
+      }, 500);
+    }).then((matches) => {
+      if (teamFilter) {
+        let filteredMatches = [];
+        matches.forEach((match) => {
+          if (
+            match.team1_name == teamFilter ||
+            match.team2_name == teamFilter
+          ) {
+            filteredMatches.push(match);
+          }
+        });
+        return filteredMatches;
+      } else {
+        return matches;
+      }
+    });
+  }
+
+  //Resetting queryparams to default
+  resetController(controller, isExiting, transition) {
+    if (isExiting) {
+      controller.set('teamFilter', null);
+    }
   }
 }

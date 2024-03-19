@@ -2,6 +2,15 @@
 {{!-- {{log @model}} --}}
 {{#if @model}}
   <h3>Team {{@model.name}}</h3>
+  <div class="players-list">
+    <p><b>Players</b></p>
+    {{#each @model.players as |player|}}
+    <LinkTo @route="player" @model={{player.id}} class="player-link">{{player.name}}</LinkTo>
+    {{/each}}
+  </div>
+  {{#if this.match_id}}
+    <button type="button" {{on 'click' this.backToMatch}}>Back</button>
+  {{/if}}
 {{else}}
   <p>No Team Found</p>
   <LinkTo @route='matches'>Back To Matches</LinkTo>

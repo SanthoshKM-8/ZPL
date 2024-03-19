@@ -1,4 +1,4 @@
-{{page-title "Match"}}
+{{page-title (concat "Match " @model.no)}}
 <div class="match">
   <h3>Match {{@model.no}}</h3>
   <LinkTo @route="team" @model={{@model.team1_id}} class="team-name-link"><span>{{@model.team1_name}}</span></LinkTo>

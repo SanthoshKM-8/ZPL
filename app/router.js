@@ -11,9 +11,7 @@ Router.map(function () {
   this.route('matches', function () {
     this.route('match', { path: '/:match_id' });
   });
-  this.route('team', { path: 'team/:team_id' }, function () {
-    this.route('player', { path: 'player/:player_id' });
-  });
-  // this.route('match', { path: 'match/:match_id' });
+  this.route('team', { path: 'team/:team_id' });
+  this.route('player', { path: 'player/:player_id' });
   this.route('not-found', { path: '/*path' });
 });

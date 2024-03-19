@@ -1,0 +1,25 @@
+{{page-title (concat "Player " this.model.name)}}
+{{!-- {{log this.model}} --}}
+{{#if this.model}}
+<div>
+  <h4>{{this.model.name}}</h4>
+  <p>Role: {{this.model.role}}</p>
+  <p>Matches Played: {{this.model.matches}}</p>
+  <p>Stats</p>
+  <table class="player-stats">
+    <tr>
+      <th>Won</th>
+      <th>Lose</th>
+    </tr>
+    <tr>
+      <td>{{this.model.stats.won}}</td>
+      <td>{{this.model.stats.lose}}</td>
+    </tr>
+  </table> 
+</div>
+  {{!-- <button type="button" {{on 'click' this.backToTeam}}>Back</button> --}}
+{{else}}
+  <p>No Player Found</p>
+  <LinkTo @route='matches'>Back To Matches</LinkTo>
+{{/if}}
+{{outlet}}

@@ -9,7 +9,7 @@ body {
   border-radius: 20px;
   padding: 10px;
   margin: 10px auto;
-  width: 30%;
+  width: 300px;
 }
 
 .player-link {
@@ -54,4 +54,16 @@ a {
 
 .filter :nth-child(2) {
   border-left: none;
+}
+
+.match-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: 20px auto;
+}
+
+.item1 {
+  width: 350px;
 }

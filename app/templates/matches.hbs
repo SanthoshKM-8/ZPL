@@ -3,12 +3,16 @@
 {{!-- {{log @model}} --}}
 <div class="filter">
   <p>Filter by Team</p>
-  <LinkTo @route='matches' @query={{hash teamFilter="Platform"}}>Platform</LinkTo>
-  <LinkTo @route='matches' @query={{hash teamFilter="Billing"}}>Billing</LinkTo>
-  <LinkTo @route='matches' @query={{hash teamFilter="Invoice"}}>Invoice</LinkTo>
+  <LinkTo @route='matches' @query={{hash teamFilter="Platform" }}>Platform</LinkTo>
+  <LinkTo @route='matches' @query={{hash teamFilter="Billing" }}>Billing</LinkTo>
+  <LinkTo @route='matches' @query={{hash teamFilter="Invoice" }}>Invoice</LinkTo>
   <LinkTo @route='matches' @query={{hash teamFilter=null}}>Clear Filter</LinkTo>
 </div>
-{{#each this.filteredMatches as |match|}}
-  <MatchCard @match={{match}} class="match-card"/>
-{{/each}}
-{{outlet}}
+<div class="match-view">
+  <div class="item1">
+    {{#each this.model as |match|}}
+    <MatchCard @match={{match}} class="match-card" />
+    {{/each}}
+  </div>
+  {{outlet}}
+</div>

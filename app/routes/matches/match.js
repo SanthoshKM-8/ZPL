@@ -2,13 +2,19 @@ import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
 export default class MatchesMatchRoute extends Route {
-  @service database;
+  @service("database") db;
 
-  model({ match_id }) {
+  // beforeModel() {
+  //   console.log("before");
+  // }
+
+  model(params) {
+    console.log(params);
+    const match_id = params.match_id;
     console.log('Match ID ' + match_id);
     // this.controllerFor('team').set('match_id', match_id);
     let currentMatch = null;
-    this.database.matches.forEach((match) => {
+    this.modelFor('matches').forEach((match) => {
       if (match.id == match_id) {
         currentMatch = match;
       }

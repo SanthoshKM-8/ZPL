@@ -76,7 +76,7 @@ export default class DatabaseService extends Service {
       team2_id: 3,
       team2_name: 'Invoice',
       no: 3,
-      venue: 'Thenkasi Zoho',
+      venue: 'Tenkasi Zoho',
       date: '2024-03-24',
       time: '05:00 PM',
     },

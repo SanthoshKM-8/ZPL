@@ -8,10 +8,19 @@
   <LinkTo @route='matches' @query={{hash teamFilter="Invoice" }}>Invoice</LinkTo>
   <LinkTo @route='matches' @query={{hash teamFilter=null}}>Clear Filter</LinkTo>
 </div>
+<div class="filter">
+  <p>Filter by Venue</p>
+  <LinkTo @route='matches' @query={{hash venueFilter="Kappalur" }}>Kappalur</LinkTo>
+  <LinkTo @route='matches' @query={{hash venueFilter="Chennai" }}>Chennai</LinkTo>
+  <LinkTo @route='matches' @query={{hash venueFilter="Tenkasi" }}>Tenkasi</LinkTo>
+  <LinkTo @route='matches' @query={{hash venueFilter=null}}>Clear Filter</LinkTo>
+</div>
 <div class="match-view">
   <div class="item1">
     {{#each this.model as |match|}}
     <MatchCard @match={{match}} class="match-card" />
+    {{else}}
+    <p>No matches found for this filter.</p>
     {{/each}}
   </div>
   {{outlet}}

@@ -5,9 +5,10 @@ import { tracked } from '@glimmer/tracking';
 export default class MatchesController extends Controller {
   @service database;
 
-  queryParams = ['teamFilter'];
+  queryParams = [{teamFilter: 'team'}, {venueFilter: 'venue'}];
   // @tracked 
   teamFilter = null;
+  venueFilter = null;
 
   // get filteredMatches() {
   //   let matches = [];

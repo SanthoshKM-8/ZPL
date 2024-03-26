@@ -41,7 +41,7 @@ export default class MatchesRoute extends Route {
       {
         id: 102,
         team1_id: 1,
-        team1_name: 'Invoice',
+        team1_name: 'Platform',
         team2_id: 3,
         team2_name: 'Invoice',
         no: 2,

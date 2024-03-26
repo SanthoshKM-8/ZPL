@@ -19,6 +19,21 @@ export default class MatchesMatchRoute extends Route {
         currentMatch = match;
       }
     });
-    return currentMatch;
+    // new Promise((resolve, reject) => {
+    //   // setTimeout(() => {
+    //     resolve(console.log('Hello 1'));
+    //   // },500)
+    // }).then(() => {console.log('Hello 2')});
+    // console.log('Hello 3')
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(currentMatch);
+      },500)
+    }).then((currentMatch) => {return currentMatch});
+  }
+
+  serialize(model, params) {
+    // console.log(model);
+    return {match_id: model.id};
   }
 }

@@ -41,7 +41,7 @@ export default class MatchesRoute extends Route {
       {
         id: 102,
         team1_id: 1,
-        team1_name: 'Platform',
+        team1_name: 'Invoice',
         team2_id: 3,
         team2_name: 'Invoice',
         no: 2,
@@ -93,7 +93,7 @@ export default class MatchesRoute extends Route {
   redirect(model,transition) {
     if (model.get('length') === 1) {
       // console.log(model.get('firstObject'));
-      this.router.transitionTo('matches.match', model.get('firstObject'));
+      this.router.transitionTo('matches.match', model[0]);
     }
   }
 

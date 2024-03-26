@@ -2,6 +2,7 @@ import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import { A } from '@ember/array';
 import { getOwner } from '@ember/application';
+import { log } from 'qunit';
 
 export default class MatchesRoute extends Route {
   @service database;
@@ -90,10 +91,18 @@ export default class MatchesRoute extends Route {
     });
   }
 
-  redirect(model,transition) {
+  redirect(model, transition) {
+    // console.log(transition);
     if (model.get('length') === 1) {
+      let team = transition.to.queryParams.team;
+      let venue = transition.to.queryParams.venue;
       // console.log(model.get('firstObject'));
-      this.router.transitionTo('matches.match', model[0]);
+      this.router.transitionTo('matches.match', model[0], {
+        queryParams: {
+          team,
+          venue
+        }
+      });
     }
   }
 
